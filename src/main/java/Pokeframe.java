@@ -12,16 +12,23 @@ public class Pokeframe extends javax.swing.JFrame {
     private void initComponents() {
 
         pokedexPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        Title = new javax.swing.JLabel();
         descriptionPanel = new javax.swing.JPanel();
-        windowDisplay = new javax.swing.JPanel();
+        userPanel = new javax.swing.JPanel();
+        windowDisplayInfo = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         pokedexPanel.setBackground(new java.awt.Color(255, 51, 51));
-        pokedexPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 51, 51), 5));
+        pokedexPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
         pokedexPanel.setMaximumSize(new java.awt.Dimension(500, 700));
         pokedexPanel.setPreferredSize(new java.awt.Dimension(500, 700));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/blueCircle.jpg"))); // NOI18N
+
+        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Weathermon.png"))); // NOI18N
 
         descriptionPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
         descriptionPanel.setPreferredSize(new java.awt.Dimension(400, 400));
@@ -30,24 +37,46 @@ public class Pokeframe extends javax.swing.JFrame {
         descriptionPanel.setLayout(descriptionPanelLayout);
         descriptionPanelLayout.setHorizontalGroup(
             descriptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         descriptionPanelLayout.setVerticalGroup(
             descriptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 390, Short.MAX_VALUE)
         );
 
-        windowDisplay.setBackground(new java.awt.Color(99, 99, 99));
+        userPanel.setBackground(new java.awt.Color(99, 99, 99));
+        userPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
+        userPanel.setPreferredSize(new java.awt.Dimension(400, 150));
 
-        javax.swing.GroupLayout windowDisplayLayout = new javax.swing.GroupLayout(windowDisplay);
-        windowDisplay.setLayout(windowDisplayLayout);
-        windowDisplayLayout.setHorizontalGroup(
-            windowDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        windowDisplayInfo.setBackground(new java.awt.Color(141, 198, 69));
+        windowDisplayInfo.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, java.awt.Color.darkGray));
+
+        javax.swing.GroupLayout windowDisplayInfoLayout = new javax.swing.GroupLayout(windowDisplayInfo);
+        windowDisplayInfo.setLayout(windowDisplayInfoLayout);
+        windowDisplayInfoLayout.setHorizontalGroup(
+            windowDisplayInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 258, Short.MAX_VALUE)
         );
-        windowDisplayLayout.setVerticalGroup(
-            windowDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+        windowDisplayInfoLayout.setVerticalGroup(
+            windowDisplayInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 103, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout userPanelLayout = new javax.swing.GroupLayout(userPanel);
+        userPanel.setLayout(userPanelLayout);
+        userPanelLayout.setHorizontalGroup(
+            userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(userPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(windowDisplayInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE))
+        );
+        userPanelLayout.setVerticalGroup(
+            userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(userPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(windowDisplayInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout pokedexPanelLayout = new javax.swing.GroupLayout(pokedexPanel);
@@ -55,20 +84,30 @@ public class Pokeframe extends javax.swing.JFrame {
         pokedexPanelLayout.setHorizontalGroup(
             pokedexPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pokedexPanelLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(pokedexPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(descriptionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(windowDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(45, 45, 45))
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addGroup(pokedexPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(descriptionPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(userPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pokedexPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Title)))
+                .addGap(50, 50, 50))
         );
         pokedexPanelLayout.setVerticalGroup(
             pokedexPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pokedexPanelLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addContainerGap()
+                .addGroup(pokedexPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(pokedexPanelLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(Title)))
+                .addGap(9, 9, 9)
                 .addComponent(descriptionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(windowDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addGap(34, 34, 34)
+                .addComponent(userPanel, 129, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,8 +166,11 @@ public class Pokeframe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Title;
     private javax.swing.JPanel descriptionPanel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel pokedexPanel;
-    private javax.swing.JPanel windowDisplay;
+    private javax.swing.JPanel userPanel;
+    private javax.swing.JPanel windowDisplayInfo;
     // End of variables declaration//GEN-END:variables
 }
