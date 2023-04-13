@@ -3,8 +3,9 @@
  */
 //This form prompts the user for a city they want to view for weather
 package forms;
+import api_assets_weather.Response;
+import api_assets_weather.Location;
 import classes.API_Response;
-import api_assets.*;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;

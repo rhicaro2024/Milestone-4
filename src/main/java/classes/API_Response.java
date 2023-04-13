@@ -1,9 +1,13 @@
-/**
+/*
  * Holds APi call methods to use in the windows
+ * Finding the name based on element works
+ * Finding the Type, Weight, and Height works
+   Finding the sprite URL works
  */
 package classes;
 
-import api_assets.*;
+import api_assets_weather.*;
+import api_assets_pokemon.*;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -60,6 +64,43 @@ public class API_Response {
             String tmp = in.readLine();
             Location[] location_resp = gson.fromJson(tmp, Location[].class);
             return location_resp;
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    
+    public PokemonResponseName getPokemonResponseName(String pokemonType){
+        Gson gson = new Gson();
+        try {
+            URL url = new URL("https://pokeapi.co/api/v2/type/" + pokemonType);
+            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            BufferedReader in = new BufferedReader(
+                        new InputStreamReader(connection.getInputStream()));
+            String tmp = in.readLine();
+            PokemonResponseName genPokemonResponse = gson.fromJson(tmp, PokemonResponseName.class);
+            return genPokemonResponse;
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public PokemonResponseGeneral getPokemonResponseGeneral(String pokemonName){
+        Gson gson = new Gson();
+        try {
+            URL url = new URL("https://pokeapi.co/api/v2/pokemon/" + pokemonName);
+            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            BufferedReader in = new BufferedReader(
+                        new InputStreamReader(connection.getInputStream()));
+            String tmp = in.readLine();
+            PokemonResponseGeneral genPokemonResponse = gson.fromJson(tmp, PokemonResponseGeneral.class);
+            return genPokemonResponse;
         } catch (MalformedURLException ex) {
             Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

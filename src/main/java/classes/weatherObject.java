@@ -4,7 +4,8 @@
  */
 package classes;
 
-import api_assets.*;
+import api_assets_weather.Response;
+import api_assets_weather.Location;
 import java.awt.event.MouseEvent;
 import java.math.BigDecimal;
 import java.math.RoundingMode;

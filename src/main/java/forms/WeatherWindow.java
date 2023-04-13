@@ -8,8 +8,8 @@
  */
 package forms;
 
+import api_assets_weather.Response;
 import classes.API_Response;
-import api_assets.*;
 import classes.*;
 //import java.awt.event.MouseListener;
 import static java.lang.Double.parseDouble;
@@ -26,7 +26,7 @@ import javax.swing.JOptionPane;
 public class WeatherWindow extends javax.swing.JFrame{ // extend jpanel 
     private Response weatherData;
     private MainWindow mainwindow;
-    private PokemonWindow pokemonwindow;
+//    private PokemonWindow pokemonwindow;
     private API_Response resp;
     private ArrayList<JLabel> tempHigh;
     private ArrayList<JLabel> tempLow;
@@ -48,8 +48,8 @@ public class WeatherWindow extends javax.swing.JFrame{ // extend jpanel
  */
     public WeatherWindow(Response weatherData) {
         initComponents();
-        pokemonwindow = new PokemonWindow();
-        pokemonwindow.setWeatherWin(this);
+//        pokemonwindow = new PokemonWindow();
+//        pokemonwindow.setWeatherWin(this);
         imperialBtn.setVisible(false);
         
         this.weatherData = weatherData;

@@ -1,5 +1,5 @@
 package classes;
-import api_assets.*;
+import api_assets_weather.Response;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 /**
