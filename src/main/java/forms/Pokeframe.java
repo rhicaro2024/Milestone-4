@@ -28,7 +28,14 @@ public class Pokeframe extends javax.swing.JFrame {
         pokemonlist = new PokemonList();
         pokedex = new Pokedex();
         
-        
+        cityform.setSize(400,400);
+        day1.setSize(400,400);
+        day2.setSize(400,400);
+        day3.setSize(400,400);
+        day4.setSize(400,400);
+        day5.setSize(400,400);
+        pokemonlist.setSize(400,400);
+        pokedex.setSize(400,400);
        
         descriptionPanel.add(cityform);
         descriptionPanel.add(day1);
