@@ -1,23 +1,43 @@
-package forms.test;
+package forms;
 
+import forms.test.TestPanel;
+import forms.test.TestPanel2;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class Pokeframe extends javax.swing.JFrame {
-    private TestPanel test1;
-    private TestPanel2 test2;
     private int stateNumber;
-    private ArrayList<JPanel> panelList;
+    private CityForm cityform;
+    private Day1 day1;
+    private Day2 day2;
+    private Day3 day3;
+    private Day4 day4;
+    private Day5 day5;
+    private PokemonList pokemonlist;
+    private Pokedex pokedex;
     
     public Pokeframe() {
         initComponents();
         stateNumber = 0;
-        test1 = new TestPanel();
-        test2 = new TestPanel2();
-        test1.setSize(400,400);
-        test2.setSize(400,400);
-        descriptionPanel.add(test1);
-        descriptionPanel.add(test2);
+        cityform = new CityForm();
+        day1 = new Day1();
+        day2 = new Day2();
+        day3 = new Day3();
+        day4 = new Day4();
+        day5 = new Day5();
+        pokemonlist = new PokemonList();
+        pokedex = new Pokedex();
+        
+        
+       
+        descriptionPanel.add(cityform);
+        descriptionPanel.add(day1);
+        descriptionPanel.add(day2);
+        descriptionPanel.add(day3);
+        descriptionPanel.add(day4);
+        descriptionPanel.add(day5);
+        descriptionPanel.add(pokemonlist);
+        descriptionPanel.add(pokedex);
         
         changeState(stateNumber);
     }
@@ -46,7 +66,6 @@ public class Pokeframe extends javax.swing.JFrame {
         descriptionPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
         descriptionPanel.setMaximumSize(new java.awt.Dimension(400, 400));
         descriptionPanel.setPreferredSize(new java.awt.Dimension(400, 400));
-        descriptionPanel.setSize(new java.awt.Dimension(400, 400));
 
         javax.swing.GroupLayout descriptionPanelLayout = new javax.swing.GroupLayout(descriptionPanel);
         descriptionPanel.setLayout(descriptionPanelLayout);
@@ -75,8 +94,9 @@ public class Pokeframe extends javax.swing.JFrame {
         windowDisplayInfoLayout.setHorizontalGroup(
             windowDisplayInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, windowDisplayInfoLayout.createSequentialGroup()
-                .addGap(0, 42, Short.MAX_VALUE)
-                .addComponent(windowNameDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(windowNameDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         windowDisplayInfoLayout.setVerticalGroup(
             windowDisplayInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,43 +201,56 @@ public class Pokeframe extends javax.swing.JFrame {
     }//GEN-LAST:event_return2LastPanelBtn
 
     private void nextPanelBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPanelBtn
+        if (stateNumber == 7){
+            stateNumber += 0;
+        } else {
         stateNumber += 1;
+        }
         System.out.println(stateNumber);
         changeState(stateNumber);
-
     }//GEN-LAST:event_nextPanelBtn
     
     public void changeState(int stateNumber){
+        cityform.setVisible(false);
+        day1.setVisible(false);
+        day2.setVisible(false);
+        day3.setVisible(false);
+        day4.setVisible(false);
+        day5.setVisible(false);
+        pokemonlist.setVisible(false);
+        pokedex.setVisible(false);
+                        
         if (stateNumber == 0){
             windowNameDisplay.setText("Enter City");
-            test2.setVisible(false);
-            test1.setVisible(true);
+            cityform.setVisible(true);
         }
         if (stateNumber == 1){
             windowNameDisplay.setText("Day 1");
-            test2.setVisible(true);
-            test1.setVisible(false);
+            day1.setVisible(true);
         }
         if (stateNumber == 2){
             windowNameDisplay.setText("Day 2");
+            day2.setVisible(true);
         }
         if (stateNumber == 3){
             windowNameDisplay.setText("Day 3");
+            day3.setVisible(true);
         }
         if (stateNumber == 4){
             windowNameDisplay.setText("Day 4");
+            day4.setVisible(true);
         }
         if (stateNumber == 5){
             windowNameDisplay.setText("Day 5");
+            day5.setVisible(true);
         }
         if (stateNumber == 6){
-            windowNameDisplay.setText("Day 5");
+            windowNameDisplay.setText("Pokémon");
+             pokemonlist.setVisible(true);
         }
         if (stateNumber == 7){
-            windowNameDisplay.setText("Pokémon");
-        }
-        if (stateNumber == 8){
             windowNameDisplay.setText("Pokédex");
+            pokedex.setVisible(true);
         }
     }
     /**
