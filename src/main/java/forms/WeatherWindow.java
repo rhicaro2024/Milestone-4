@@ -8,9 +8,10 @@
  */
 package forms;
 
+import weather_objects.WeatherObject;
+import classes.WeatherAPICall;
 import api_assets_weather.Response;
-import classes.API_Response;
-import classes.*;
+import api_response_classes.API_Response_Pokemon;
 //import java.awt.event.MouseListener;
 import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
@@ -27,14 +28,14 @@ public class WeatherWindow extends javax.swing.JFrame{ // extend jpanel
     private Response weatherData;
     private MainWindow mainwindow;
 //    private PokemonWindow pokemonwindow;
-    private API_Response resp;
+    private API_Response_Pokemon resp;
     private ArrayList<JLabel> tempHigh;
     private ArrayList<JLabel> tempLow;
     private ArrayList<JLabel> dateList;
     private ArrayList<JLabel> degreeList;
-    private ArrayList<weatherInformation> weatherInfo;
+    private ArrayList<WeatherAPICall> weatherInfo;
 //    private ArrayList<MouseListener> mouseListeners;
-    private weatherObject weatherObj;
+    private WeatherObject weatherObj;
     
     //Cite this
     private static final DecimalFormat df = new DecimalFormat("0");
@@ -53,13 +54,13 @@ public class WeatherWindow extends javax.swing.JFrame{ // extend jpanel
         imperialBtn.setVisible(false);
         
         this.weatherData = weatherData;
-        weatherObj = new weatherObject();
+        weatherObj = new WeatherObject();
         
 //        mouseListeners = new ArrayList<>();
 //        this.addMouseListener((MouseListener) this);
    
 //        weatherInfo = new ArrayList<>();
-//        weatherInfo.add(new weatherObject(weatherData));
+//        weatherInfo.add(new WeatherObject(weatherData));
         
         tempHigh = new ArrayList<>();
         tempHigh.add(high2);

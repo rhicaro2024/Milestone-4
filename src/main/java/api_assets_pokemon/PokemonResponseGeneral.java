@@ -20,16 +20,12 @@ public class PokemonResponseGeneral {
     public int getWeight(){
         return this.weight;
     }
-    
     public String getName(){
         return this.name;
     }
-    
-
     public Types[] getTypes(){
         return this.types;
     }
-//    
     public Sprite getSprite(){
         return this.sprites;
     }

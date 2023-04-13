@@ -8,10 +8,10 @@ package api_assets_pokemon;
  *
  * @author raphaelhicaro
  */
-public class PokemonResponseName {
-    public Pokemon[] pokemon;
+public class FlavorTextInner {
+    private String name;
     
-    public Pokemon[] getPokemonList(){
-        return this.pokemon;
+    public String getlanguageName(){
+        return this.name;
     }
 }

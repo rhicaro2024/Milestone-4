@@ -1,13 +1,10 @@
 package classes;
 import api_assets_weather.Response;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 /**
  * Weather Information is the subject in this observer pattern
  * 
  */
-public abstract class weatherInformation implements MouseListener{
-    
+public abstract class WeatherAPICall{
     public abstract String cityCall(Response weatherData);
     public abstract String countryCall(Response weatherData);
     public abstract double tempCall(Response weatherData, int index);

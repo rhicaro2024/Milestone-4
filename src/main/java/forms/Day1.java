@@ -86,7 +86,7 @@ public class Day1 extends javax.swing.JPanel {
 
         jLabel12.setText("Place Holder");
 
-        jLabel13.setText("Pokemon Potentially Available");
+        jLabel13.setText("Pokemon Potentially Available:");
 
         jLabel14.setText("Pokemon Sprite");
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));

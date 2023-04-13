@@ -5,7 +5,7 @@
 package forms;
 import api_assets_weather.Response;
 import api_assets_weather.Location;
-import classes.API_Response;
+import api_response_classes.API_Response_Pokemon;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,13 +23,13 @@ import javax.net.ssl.HttpsURLConnection;
  */
 public class MainWindow extends javax.swing.JFrame{
     private WeatherWindow weatherwindow;
-//    private API_Response response;
+//    private API_Response_Pokemon response;
     private Response resp;
-    private API_Response api_response;
+    private API_Response_Pokemon api_response;
    
     public MainWindow() {
         initComponents();
-        api_response = new API_Response();
+        api_response = new API_Response_Pokemon();
     }
     
     /**

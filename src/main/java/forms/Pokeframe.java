@@ -1,7 +1,5 @@
 package forms;
 
-import forms.test.TestPanel;
-import forms.test.TestPanel2;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
@@ -203,7 +201,6 @@ public class Pokeframe extends javax.swing.JFrame {
         } else {
             stateNumber -= 1;
         }
-        System.out.println(stateNumber);
         changeState(stateNumber);
     }//GEN-LAST:event_return2LastPanelBtn
 
@@ -213,7 +210,6 @@ public class Pokeframe extends javax.swing.JFrame {
         } else {
         stateNumber += 1;
         }
-        System.out.println(stateNumber);
         changeState(stateNumber);
     }//GEN-LAST:event_nextPanelBtn
     

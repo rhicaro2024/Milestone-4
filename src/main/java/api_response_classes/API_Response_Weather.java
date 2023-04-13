@@ -1,13 +1,12 @@
 /*
- * Holds APi call methods to use in the windows
- * Finding the name based on element works
- * Finding the Type, Weight, and Height works
-   Finding the sprite URL works
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package classes;
+package api_response_classes;
 
-import api_assets_weather.*;
-import api_assets_pokemon.*;
+import api_assets_weather.City;
+import api_assets_weather.Location;
+import api_assets_weather.Response;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,8 +18,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.HttpsURLConnection;
 
-public class API_Response {
 /**
+ *
+ * @author raphaelhicaro
+ */
+public class API_Response_Weather {
+    /**
  * calls the API response
  * will include later so that it holds API calls.
  * @param lat latitude
@@ -64,43 +67,6 @@ public class API_Response {
             String tmp = in.readLine();
             Location[] location_resp = gson.fromJson(tmp, Location[].class);
             return location_resp;
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    
-    
-    public PokemonResponseName getPokemonResponseName(String pokemonType){
-        Gson gson = new Gson();
-        try {
-            URL url = new URL("https://pokeapi.co/api/v2/type/" + pokemonType);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-            BufferedReader in = new BufferedReader(
-                        new InputStreamReader(connection.getInputStream()));
-            String tmp = in.readLine();
-            PokemonResponseName genPokemonResponse = gson.fromJson(tmp, PokemonResponseName.class);
-            return genPokemonResponse;
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    
-    public PokemonResponseGeneral getPokemonResponseGeneral(String pokemonName){
-        Gson gson = new Gson();
-        try {
-            URL url = new URL("https://pokeapi.co/api/v2/pokemon/" + pokemonName);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-            BufferedReader in = new BufferedReader(
-                        new InputStreamReader(connection.getInputStream()));
-            String tmp = in.readLine();
-            PokemonResponseGeneral genPokemonResponse = gson.fromJson(tmp, PokemonResponseGeneral.class);
-            return genPokemonResponse;
         } catch (MalformedURLException ex) {
             Logger.getLogger(City.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

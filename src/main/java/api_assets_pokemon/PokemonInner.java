@@ -9,14 +9,9 @@ package api_assets_pokemon;
  * @author raphaelhicaro
  */
 public class PokemonInner {
-    private int slot;
-    private Pokemon pokemon;
+    private String name;
     
-    public int getSlot(){
-        return this.slot;
-    }
-    
-    public Pokemon getPokemon(){
-        return this.pokemon;
+    public String getPokemonName(){
+        return this.name;
     }
 }
