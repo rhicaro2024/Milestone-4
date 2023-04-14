@@ -1,6 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * object class made for getting the temperature from the weather api
  */
 package weather_objects;
 
@@ -9,11 +8,13 @@ import api_assets_weather.Response;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-/**
- *
- * @author raphaelhicaro
- */
 public class TemperatureObject extends WeatherAPICall{
+    /**
+     * getter for the current temperature
+     * @param weatherData api object
+     * @param index from the many times temp is displayed by the api
+     * @return double
+     */
     @Override
     public double tempCall(Response weatherData, int index) {
         double temp = weatherData.getList()[index].getMain().getTemp();
@@ -21,6 +22,12 @@ public class TemperatureObject extends WeatherAPICall{
         return temp;
     }
 
+    /**
+     * getter for the max temperature
+     * @param weatherData api object
+     * @param index from the many times temp is displayed by the api
+     * @return double
+     */
     @Override
     public double tempCallHigh(Response weatherData, int index) {
         double temp = weatherData.getList()[index].getMain().getTemp_max();
@@ -28,6 +35,12 @@ public class TemperatureObject extends WeatherAPICall{
         return temp;
     }
 
+    /**
+     * getter for the min temperature
+     * @param weatherData api object
+     * @param index from the many times temp is displayed by the api
+     * @return double
+     */
     @Override
     public double tempCallLow(Response weatherData, int index) {
         double temp = weatherData.getList()[index].getMain().getTemp_min();
@@ -35,17 +48,28 @@ public class TemperatureObject extends WeatherAPICall{
         return temp;
     }
     
+    /**Need to Cite**
+     * round the value given to certain number of places
+     * @param value value that is to be rounded
+     * @param places places to round the number to
+     * @return double
+     */
     public double round(double value, int places){
         if (places < 0) throw new IllegalArgumentException();
         BigDecimal bd = BigDecimal.valueOf(value);
         bd = bd.setScale(places, RoundingMode.HALF_UP);
         return bd.doubleValue();
     }
-    
+    /**
+     * return the converted temp from f to c
+     * @param value temp F to be changed
+     * @return double
+     */
     public double convert2Celsius(double value){
         double convertedValue = round(((value - 32) * 5)/9,2);
         return convertedValue;
     }
+    //These methods are not used
     //==========================================================================
     
     @Override

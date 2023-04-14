@@ -1,28 +1,23 @@
-//needed for api
-package api_assets_weather;
+/**
+ * required class for calling from the weather api
+ */package api_assets_weather;
 
-//JSON object
-//
-
-public class Response { //same as json format
-    private String cod;
-    private int message;
-    private int cnt;
+public class Response {
     private Info[] list; 
     private City city;
     
-    public String getCod(){
-        return this.cod;
-    }
-    public int getMsg(){
-        return this.message;
-    }
-    public int getCnt(){
-        return this.cnt;
-    }
+    /**
+     * getter for info list class
+     * @return Info[]
+     */
     public Info[] getList(){
         return this.list;
     }
+    
+    /**
+     * getter for city class
+     * @return City
+     */
     public City getCity(){
         return this.city;
     }

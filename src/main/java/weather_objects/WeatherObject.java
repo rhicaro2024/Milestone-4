@@ -1,33 +1,47 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Object class made to get specific weather data like wind, humidity, and weather 
+ * type
  */
 package weather_objects;
 
 import classes.WeatherAPICall;
 import api_assets_weather.Response;
-import api_assets_weather.Location;
-import java.awt.event.MouseEvent;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 /**
  *
  * @author raphaelhicaro
  */
-public class WeatherObject extends WeatherAPICall{    
+public class WeatherObject extends WeatherAPICall{
+    /**
+     * getter for the wind speed
+     * @param weatherData api object
+     * @param index from the many times temp is displayed by the api
+     * @return double
+     */    
     @Override
     public double windCall(Response weatherData, int index) {
         double temp = weatherData.getList()[index].getWind().getSpeed();
         return temp;
     }
 
+     /**
+     * getter for the humidity levels
+     * @param weatherData api object
+     * @param index from the many times temp is displayed by the api
+     * @return int
+     */    
     @Override
     public int humidityCall(Response weatherData, int index) {
         int temp = weatherData.getList()[index].getMain().getHumidity();
         return temp;
     }
 
+     /**
+     * getter for the type of weather
+     * @param weatherData api object
+     * @param index from the many times temp is displayed by the api
+     * @return String
+     */    
     @Override
     public String weatherCall(Response weatherData, int index) {
         String temp = weatherData.getList()[index].getWeather()[0].getDescription();

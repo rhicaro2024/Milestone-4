@@ -1,23 +1,25 @@
-package api_assets_weather;
-
-//JSON object
+/**
+ * required class for calling from the weather api
+ */
+package api_assets_weather; 
 
 public class Weather {
-    private int id;
     private String main;
     private String description;
-    private String icon;
 
-    public int getId(){
-        return this.id;
-    }
+    /**
+     * getter for the kind of weather
+     * @return String
+     */
     public String getMain(){
         return this.main;
     }
+    
+    /**
+     * getter for a more specific description of the rain
+     * @return String
+     */
     public String getDescription(){ //returns a description of the current weater
         return this.description;
     }
-    public String getIcon(){ //returns an icon of the weather probablt through url
-        return this.icon;
-    }        
 }

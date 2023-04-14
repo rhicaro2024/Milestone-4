@@ -1,16 +1,16 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+    This class is used for the poke api to represent the wrapping class of 
+    flavor text
  */
 package api_assets_pokemon;
 
-/**
- *
- * @author raphaelhicaro
- */
 public class FlavorTextInner {
     private String name;
     
+    /**
+     * getter from the api for language type
+     * @return String 
+     */
     public String getlanguageName(){
         return this.name;
     }

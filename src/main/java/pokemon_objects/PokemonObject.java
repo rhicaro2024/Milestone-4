@@ -1,6 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * pokemon object used to make calls from the api using the api response object
  */
 package pokemon_objects;
 
@@ -13,6 +12,11 @@ import classes.*;
  */
 public class PokemonObject extends PokemonAPICall{
 
+    /**
+     * getter for the height of the pokemon
+     * @param resp API response object
+     * @return int
+     */
     @Override
     public int getHeight(PokemonResponseGeneral resp) {
         int temp = 0;
@@ -20,6 +24,11 @@ public class PokemonObject extends PokemonAPICall{
         return temp;
     }
 
+    /**
+     * getter for the weight of the pokemon
+     * @param resp API response object
+     * @return int
+     */
     @Override
     public int getWeight(PokemonResponseGeneral resp) {
         int temp = 0;
@@ -27,6 +36,11 @@ public class PokemonObject extends PokemonAPICall{
         return temp;
     }
 
+    /**
+     * getter for the name of the pokemon
+     * @param resp API response object
+     * @return string
+     */
     @Override
     public String getName(PokemonResponseName resp, int index) {
         String temp = "";
@@ -34,6 +48,11 @@ public class PokemonObject extends PokemonAPICall{
         return temp;
     }
 
+    /**
+     * getter for the description of the pokemon
+     * @param resp API response object
+     * @return String
+     */
     @Override
     public String getDescription(PokemonResponseDescription resp) {
         String temp = "";
@@ -41,6 +60,11 @@ public class PokemonObject extends PokemonAPICall{
         return temp;
     }
 
+    /**
+     * getter for the sprite URL of the pokemon
+     * @param resp API response object
+     * @return int
+     */
     @Override
     public String getSprite(PokemonResponseGeneral resp) {
         String temp = "";
@@ -48,6 +72,11 @@ public class PokemonObject extends PokemonAPICall{
         return temp;
     }
     
+    /**
+     * Finds the english description of the pokemon
+     * @param pokemon api object
+     * @return String
+     */
     public String englishDescription(PokemonResponseDescription pokemon){
         String temp = "";
         String description = "";

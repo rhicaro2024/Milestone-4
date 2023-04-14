@@ -1,3 +1,7 @@
+/**
+ * JFrame used to hold the panels for the user to view. Contains some buttons to
+ * change panels and interact with some of the panels like the cityform and pokedex panel
+ */
 package forms;
 
 import java.util.ArrayList;
@@ -5,6 +9,7 @@ import javax.swing.JPanel;
 
 public class Pokeframe extends javax.swing.JFrame {
     private int stateNumber;
+    private String currentLocation;
     private CityForm cityform;
     private Day1 day1;
     private Day2 day2;
@@ -14,9 +19,14 @@ public class Pokeframe extends javax.swing.JFrame {
     private PokemonList pokemonlist;
     private Pokedex pokedex;
     
+    /**
+     * creates a new Panel Pokeframe
+     */
     public Pokeframe() {
         initComponents();
         stateNumber = 0;
+        currentLocation = "Nowhere";
+        
         cityform = new CityForm();
         day1 = new Day1();
         day2 = new Day2();
@@ -36,13 +46,6 @@ public class Pokeframe extends javax.swing.JFrame {
         pokedex.setSize(400,400);
        
         descriptionPanel.add(cityform);
-        descriptionPanel.add(day1);
-        descriptionPanel.add(day2);
-        descriptionPanel.add(day3);
-        descriptionPanel.add(day4);
-        descriptionPanel.add(day5);
-        descriptionPanel.add(pokemonlist);
-        descriptionPanel.add(pokedex);
         
         changeState(stateNumber);
     }
@@ -56,6 +59,8 @@ public class Pokeframe extends javax.swing.JFrame {
         userPanel = new javax.swing.JPanel();
         windowDisplayInfo = new javax.swing.JPanel();
         windowNameDisplay = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -92,23 +97,44 @@ public class Pokeframe extends javax.swing.JFrame {
         windowDisplayInfo.setPreferredSize(new java.awt.Dimension(260, 100));
 
         windowNameDisplay.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        windowNameDisplay.setText("Place Holder");
+        windowNameDisplay.setText("####");
+
+        jLabel1.setText("Current Location:");
+
+        jLabel2.setText("Nowhere");
 
         javax.swing.GroupLayout windowDisplayInfoLayout = new javax.swing.GroupLayout(windowDisplayInfo);
         windowDisplayInfo.setLayout(windowDisplayInfoLayout);
         windowDisplayInfoLayout.setHorizontalGroup(
             windowDisplayInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, windowDisplayInfoLayout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
-                .addComponent(windowNameDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(windowDisplayInfoLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(windowDisplayInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(windowNameDisplay)
+                    .addGroup(windowDisplayInfoLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         windowDisplayInfoLayout.setVerticalGroup(
             windowDisplayInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(windowNameDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+            .addGroup(windowDisplayInfoLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(windowNameDisplay)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(windowDisplayInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jButton1.setText("Enter");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Next");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -212,7 +238,24 @@ public class Pokeframe extends javax.swing.JFrame {
         }
         changeState(stateNumber);
     }//GEN-LAST:event_nextPanelBtn
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (stateNumber == 0){
+            currentLocation = cityform.getCityName();
+        }
+        descriptionPanel.add(day1);
+        descriptionPanel.add(day2);
+        descriptionPanel.add(day3);
+        descriptionPanel.add(day4);
+        descriptionPanel.add(day5);
+        descriptionPanel.add(pokemonlist);
+        descriptionPanel.add(pokedex);
+    }//GEN-LAST:event_jButton1ActionPerformed
     
+    /**
+     * Changes the view of the panel based on the stateNumber
+     * @param stateNumber tells the program which panel to set to visible
+     */
     public void changeState(int stateNumber){
         cityform.setVisible(false);
         day1.setVisible(false);
@@ -296,6 +339,8 @@ public class Pokeframe extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel pokedexPanel;
     private javax.swing.JPanel userPanel;
     private javax.swing.JPanel windowDisplayInfo;

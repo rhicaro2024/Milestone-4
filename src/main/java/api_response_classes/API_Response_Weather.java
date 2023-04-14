@@ -1,6 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Class made specifically for calls with the weather api and geo location api
  */
 package api_response_classes;
 
@@ -18,10 +17,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.HttpsURLConnection;
 
-/**
- *
- * @author raphaelhicaro
- */
 public class API_Response_Weather {
     /**
  * calls the API response

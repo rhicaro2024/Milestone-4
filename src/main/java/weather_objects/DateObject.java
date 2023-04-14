@@ -1,23 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Object class made specifically for making a call for the date
  */
 package weather_objects;
 
 import classes.WeatherAPICall;
 import api_assets_weather.Response;
 
-/**
- *
- * @author raphaelhicaro
- */
 public class DateObject extends WeatherAPICall{
+        
+    /**
+     * getter for the date
+     * @param weatherData api object
+     * @param index index of date that the user wants
+     * @return String
+     */
     @Override
     public String dateCall(Response weatherData, int index) {
         String date_Num = weatherData.getList()[index].getDt_Text(); 
         String[] date_arr = date_Num.split(" ");
         return date_arr[0];
     }
+    //These methods are not used
     //==========================================================================
     
     @Override

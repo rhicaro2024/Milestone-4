@@ -1,3 +1,6 @@
+/**
+ * Handle the API requests with the poke API
+ */
 package api_response_classes;
 
 import api_assets_weather.*;
@@ -13,6 +16,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class API_Response_Pokemon{    
+    /**
+     * create a API call specifically for the name of the pokemon based on a certain
+     * element type which is based on the weather.
+     * @param pokemonType element of the pokemon
+     * @return PokemonResponseName
+     */
     public PokemonResponseName getPokemonResponseName(String pokemonType){
         Gson gson = new Gson();
         try {
@@ -31,6 +40,11 @@ public class API_Response_Pokemon{
         return null;
     }
     
+    /**
+     * create an API call specifically for general information about a specific pokemon
+     * @param pokemonName name of pokemon that is viewed
+     * @return PokemonResponseGeneral
+     */
     public PokemonResponseGeneral getPokemonResponseGeneral(String pokemonName){
         Gson gson = new Gson();
         try {
@@ -49,6 +63,12 @@ public class API_Response_Pokemon{
         return null;
     }
     
+    /**
+     * create an API call specifically for the Description of the pokemon similar
+     * to a pokedex
+     * @param pokemonName name of pokemon that is viewed
+     * @return PokemonResponseDescription
+     */
     public static PokemonResponseDescription getPokemonResponseDescription(String pokemonName){
         Gson gson = new Gson();
         try {

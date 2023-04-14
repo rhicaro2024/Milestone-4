@@ -1,3 +1,6 @@
+/**
+ * Abstract class for pokemon objects
+ */
 package classes;
 
 import api_assets_pokemon.*;

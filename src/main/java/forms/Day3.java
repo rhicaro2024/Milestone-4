@@ -1,6 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+/**
+ * Panel represents the day 3 of the weather api
  */
 package forms;
 
@@ -11,7 +10,7 @@ package forms;
 public class Day3 extends javax.swing.JPanel {
 
     /**
-     * Creates new form Day1
+     * Creates new form Day3
      */
     public Day3() {
         initComponents();

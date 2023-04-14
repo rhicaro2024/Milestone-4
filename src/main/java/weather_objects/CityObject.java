@@ -1,29 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Object class specifically for calling on city related methods from the API
  */
 package weather_objects;
 
 import classes.WeatherAPICall;
-import api_assets_weather.Response;
+import api_assets_weather.*;
 
-/**
- *
- * @author raphaelhicaro
- */
 public class CityObject extends WeatherAPICall{
+    /**
+     * getter for returning the city name
+     * @param weatherData api object
+     * @return String
+     */
      @Override
     public String cityCall(Response weatherData) {
         String temp = weatherData.getCity().getName();
         return temp;
     }
+    
+    /**
+     * getter for returning the name of the country
+     * @param weatherData api object
+     * @return String
+     */
     @Override
     public String countryCall(Response weatherData) {
         String temp = weatherData.getCity().getCountry();
         return temp;
     }
+    //These methods are not used by this object
     //==========================================================================
-    
     @Override
     public double tempCall(Response weatherData, int index) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
