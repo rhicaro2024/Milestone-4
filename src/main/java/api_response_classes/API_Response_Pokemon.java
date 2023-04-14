@@ -66,25 +66,4 @@ public class API_Response_Pokemon{
         }
         return null;
     }
-    
-    public static String enDescription(PokemonResponseDescription pokemon){
-        String temp = "";
-        String description = "";
-        FlavorText[] entryList = pokemon.getFlavorText();
-        for (int i=0; i<entryList.length;i++){
-            if("en".equals(entryList[i].getFlavorTextInner().getlanguageName())){
-                description = entryList[i].getText();
-                String[] split = description.split("\n");
-                for (int j=0;j<split.length;j++){
-                    if (j == 0){
-                        temp = temp + split[j];
-                    } else {
-                    temp = temp + " " +split[j];
-                    }
-                }
-                return temp;
-            }   
-        }
-        return "No entry";
-    }
 }
